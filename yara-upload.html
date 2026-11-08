@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YARA · Temporary Product Image Upload</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f4ec;color:#201c17;font:15px/1.5 Arial,sans-serif}.wrap{max-width:720px;margin:7vh auto;padding:32px;background:#fffdf8;border:1px solid #e5dccd}h1{font:36px Georgia,serif;letter-spacing:.12em;margin:0 0 6px}p{color:#71685e}.field{display:block;margin:22px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}input{width:100%;padding:13px;border:1px solid #d8cdbd;background:#fff;font:inherit}button{margin-top:20px;padding:14px 24px;background:#211d18;color:white;border:0;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}button:disabled{opacity:.5}#status{margin-top:20px;white-space:pre-wrap;font-size:13px}.note{font-size:12px;color:#82796e}
+</style></head><body><main class="wrap"><h1>YARA</h1><div style="letter-spacing:.22em;font-size:10px">TEMPORARY PRODUCT IMAGE UPLOAD</div>
+<p>Upload the original JPEG product photographs. Images are stored without cropping or alteration.</p>
+<label class="field" for="key">Temporary upload password</label><input id="key" type="password" autocomplete="off" placeholder="Enter upload password">
+<label class="field" for="files">Select product images</label><input id="files" type="file" accept="image/jpeg,.jpg" multiple>
+<button id="go">Upload selected images</button><div id="status" role="status"></div><p class="note">Temporary private upload utility. Do not share the password. This page will be removed after the catalogue transfer.</p></main>
+<script>
+const go=document.getElementById('go'),status=document.getElementById('status');
+go.addEventListener('click',async()=>{const key=document.getElementById('key').value,files=[...document.getElementById('files').files];if(!key||!files.length){status.textContent='Enter the password and choose JPEG files.';return}go.disabled=true;let done=0,errors=[];for(const file of files){try{const r=await fetch('/api/yara-upload?filename='+encodeURIComponent(file.name),{method:'POST',headers:{Authorization:'Bearer '+key,'Content-Type':'image/jpeg'},body:file});const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);done++;status.textContent='Uploaded '+done+' of '+files.length+' · '+file.name}catch(e){errors.push(file.name+': '+e.message);status.textContent='Uploaded '+done+' of '+files.length+'\n'+errors.join('\n')}}status.textContent='Completed: '+done+' of '+files.length+' images.'+(errors.length?'\nErrors:\n'+errors.join('\n'):'');go.disabled=false;});
+</script></body></html>
