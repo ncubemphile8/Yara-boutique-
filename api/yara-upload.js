@@ -5,7 +5,7 @@ export const config = { api: { bodyParser: false }, maxDuration: 60 };
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
-  const supplied = String(req.headers.authorization || '').replace(/^Bearer\\s+/i, '');
+  const supplied = String(req.headers.authorization || '').replace(/^Bearer\s+/i, '');
   const expected = process.env.YARA_TEMP_UPLOAD_KEY || '';
   if (!expected || supplied.length !== expected.length || !Buffer.from(supplied).equals(Buffer.from(expected))) {
     return res.status(401).json({ error: 'Unauthorized' });
