@@ -124,7 +124,813 @@ html{scroll-behavior:smooth}body{overflow-x:hidden}.hero-video,.film-media video
 <section class="admin-view" id="admin-settings"><div class="admin-title"><div><div class="eyebrow" style="color:var(--gold)">CONFIGURATION</div><h2>Settings</h2></div></div><div class="admin-panel"><h3>Store settings</h3><div class="admin-form"><label class="field">Store name<input value="YARA Boutique"></label><label class="field">WhatsApp<input value="+27 71 589 5116"></label><label class="field">Email<input value="yaraboutique21@gmail.com"></label><label class="field">Currency<select><option>ZAR — South African Rand</option></select></label></div><br><button class="admin-btn dark" onclick="alert('Settings saved locally.')">Save settings</button></div><div class="admin-panel" style="margin-top:16px"><h3>Admin access</h3><p style="color:var(--muted);font-size:12px">Current administrator username: <b>admin</b>. Password is configured for this local build.</p></div></section>
 </main></div></div></div>
 <script>
-const products=[{"name":"Blush Cascade Ruffle Dress","price":"295","sizes":"S, L, 2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/57b01d83-339f-457b-ae71-ce45557d4f40.png","stock":3,"description":"A blush-pink mini dress with cascading layered ruffles and a flounced hem."},{"name":"Tropical Bloom Maxi Dress","price":"320","sizes":"XL, 3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/db515c90-494b-4028-824b-48d09c6dbcfa.png","stock":2,"description":"A sky-blue maxi dress with bold tropical floral artwork."},{"name":"Lavender Floral Maxi Dress","price":"300","sizes":"S, M, XL, 2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/eb3ee2b8-af9d-4139-a90e-e5db35567bc1.png","description":"A flowing full-length spaghetti-strap maxi dress in a vibrant pink, orange, lilac and sage watercolor floral print."},{"name":"Ivory Eyelet Sleeve Top","price":"280","sizes":"S, M, L, XL, 2XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/e606d718-556f-4adf-bd21-31b9eb90ecc4.png","stock":5,"description":"A crisp ivory crew-neck top with short puff eyelet sleeves."},{"name":"Sage & Ivory Stripe Shirt","price":"280","sizes":"S, L, XL, 2XL, 3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/582f8c83-94a9-45d6-adbb-c72d4f49f963.png","stock":5,"description":"A relaxed shirt in fresh sage-and-ivory vertical stripes."},{"name":"Red Pleated Midi Skirt","price":"280","sizes":"S/M, L/XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/3a19c296-d191-4d97-a1b3-d2d2148f8141.png","stock":3,"description":"A fluid pleated midi skirt in a vivid scarlet finish."},{"name":"Olive Polka-Dot Pleated Skirt","price":"280","sizes":"M","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/adde7e21-0cf8-4f70-9537-df4c8e9f3476.png","stock":1,"description":"An olive satin-look pleated skirt finished with delicate white polka dots."},{"name":"Emerald Pleated Midi Skirt","price":"280","sizes":"S, L, XL, 2XL, 3XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/2dd5f035-ff1f-4dc8-8654-2328099a1bef.png","stock":5,"description":"A statement emerald pleated skirt with soft movement."},{"name":"Hot-Pink Pleated Midi Skirt","price":"280","sizes":"M, L, XL, 2XL, 3XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/7239df0c-798b-4b8c-906c-df45f2134404.png","stock":5,"description":"A bright fuchsia pleated midi skirt."},{"name":"Sage-Green Button-Front Shirt Dress","price":"400","sizes":"S, M, L, XL, 2XL, 3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8281ae2c-9373-459c-b271-5c319c3f5a52.png","description":"A sage-green button-front shirt dress with puff sleeves and a matching waist belt."},{"name":"Cream Strappy Wide-Leg Jumpsuit","price":"250","sizes":"L, XL","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/d09da2fe-7fc5-43d6-9e90-441ee052d86c.png"},{"name":"White Tailored Shorts","price":"120","sizes":"L, XL, 2XL","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/d2f245e6-ede1-47cd-93da-0713b88a4f4e.png","description":"Clean white tailored shorts with a structured waistband and a neat, polished silhouette.","stock":8},{"name":"Black-and-White Animal-Print Blouse","price":"250","sizes":"2XL, 3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/e694fbf6-c34b-4db2-83a1-c1cbb1fd5cbc.png","description":"A black-and-white printed blouse with a relaxed shape and a smart button-front finish."},{"name":"Black Polka-Dot Tie-Neck Blouse","price":"360","sizes":"L, XL, 2XL, XXL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/2ed3a18e-f6d4-4fd7-9a14-7a5053e44588.png","description":"A black blouse with white polka dots, a soft tie neckline and long sleeves.","stock":9,"hidden":true},{"name":"Black Tailored Shorts","price":"240","sizes":"M","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9e69e232-581d-4403-9cfc-facaeb59c138.png","stock":1,"description":"A classic black tailored short for easy everyday styling."},{"name":"Dark Wrap Skirt","price":"245","sizes":"M, L, 2XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/eb2c86a4-c27a-495b-ac07-7b128d35defe.png","stock":6,"description":"A charcoal-black wrap skirt with a waist tie and soft A-line shape."},{"name":"Ivory Wide-Leg Trousers","price":"240","sizes":"M, L, XL, 2XL","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/f8d2d6a7-f7dd-48b0-919d-61dbfb411a8b.png","stock":7,"description":"Fluid ivory wide-leg trousers with a high waist and an easy, elongated silhouette."},{"name":"Sunshine Yellow Strappy Maxi Dress","price":"240","sizes":"M, XL, 2XL, 3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8e2e227f-bc19-44de-b989-11749b19523c.jpg","stock":4,"description":"A bright yellow full-length dress with a gathered flowing skirt and delicate shoulder straps.","hidden":true},{"name":"Blush Maxi Skirt","price":"240","sizes":"M, 3XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/fbdb2790-e621-4a77-b738-ed82e379acdb.jpg","stock":2,"description":"A soft blush-pink maxi skirt with a smooth, flowing drape.","hidden":true},{"name":"Skylar Bow Blouse","price":"345","sizes":"L, XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/7fee6074-d0b2-487c-a080-73ad37003704.png","stock":1},{"name":"Rosé Stripe Shirt","price":"240","sizes":"3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/47e6701d-b234-4de5-834d-52a9c2b4b336.png","stock":1,"description":"A relaxed button-front shirt in fine rose-and-ivory stripes."},{"name":"Blush Signature Shirt","price":"240","sizes":"M, L, 2XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9822dc40-8db5-4863-a43d-ef181552b1c9.png","stock":3,"description":"A relaxed blush-pink button-front shirt."},{"name":"Ivory Button Knit","price":"195","sizes":"XL, 2XL","cat":"Knitwear","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/0e1a021b-e0c1-4205-a740-e2f23e9e697b.png"},{"name":"Champagne Bow Blouse","price":"345","sizes":"L","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/ab359d82-6459-40a4-ac98-be559b4f401a.png","stock":1},{"name":"Noir Gold Button-Front Top","price":"335","sizes":"XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9b874b1f-f767-48a7-992e-8fb64d12d951.png","description":"A black sleeveless top finished with a neat row of gold-tone buttons."},{"name":"Parisian Bicycle Tee","price":"120","sizes":"S, 2XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/70b383de-fba7-4433-a0aa-26d2a26e2382.png"},{"name":"Blush Eyelet Sleeve Top","price":"280","sizes":"XL, 2XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/5819e80c-8227-4144-a8e9-7b5a9b145796.png","stock":2,"description":"A soft blush tee finished with statement eyelet puff sleeves."},{"name":"Tangerine Eyelet Puff-Sleeve Top","price":"280","sizes":"2XL, 3XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/979d85eb-6391-4909-aaa6-4e367067b95b.png","stock":2,"description":"A vivid orange top with a rounded neckline and statement eyelet puff sleeves."},{"name":"Ivory Polka-Dot Tie-Neck Blouse","price":"345","sizes":"XXL, 3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8f56f507-8d7f-46de-a774-71d6d098afcd.jpg","stock":2,"description":"A sheer ivory blouse with black polka dots, long sleeves and a front tie neckline.","hidden":true},{"name":"Cream Button-Front Playsuit","price":"250","sizes":"M, XL, 2XL","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/a9e18270-69ca-4faa-9de2-f10b04d8ed7c.png","stock":3,"description":"A cream strapless playsuit with a shirred bodice, a ruffled neckline, prominent front buttons and softly gathered shorts.","hidden":true},{"name":"Fuchsia Shirred Ruffle Top","price":"150","sizes":"One Size","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1cf6095a-b1ea-42d1-8d1f-a9527fabae4c.png","stock":6,"description":"A bright fuchsia shirred top with a softly ruffled finish."},{"name":"Fuchsia Smocked Statement Top","price":"245","sizes":"S, XL","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/6df04634-a7e1-49e6-9e21-cbf7e144aafc.png","stock":2,"description":"A vibrant fuchsia smocked top with a textured, figure-hugging finish."},{"name":"Sand Lace-Trim Ribbed Top","price":"165","sizes":"One Size","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/cd8c283f-243f-4b7d-9add-8111cacac1a8.png","stock":5,"description":"A sand-toned ribbed top framed with delicate lace trim."},{"name":"Ivory Lace-Trim Ribbed Top","price":"165","sizes":"One Size","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/92e3d63c-4e75-4370-9d35-9ee6d4aed907.png","stock":4,"description":"An ivory ribbed top with lace edging and a feminine V neckline."},{"name":"Noir Lace-Trim Sleeveless Top","price":"165","sizes":"One Size","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/24ed86bc-4a4e-4522-9150-865a483a9cf6.png","stock":6,"description":"A black sleeveless top with delicate lace trim."},{"name":"Cocoa & Ivory Stripe Shirt","price":"280","sizes":"M, 3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1a293d90-0ee3-4a16-93cd-476ee4791e9f.png","stock":2,"description":"A relaxed button-front shirt in cocoa-and-ivory vertical stripes."},{"name":"Scarlet & Ivory Stripe Shirt","price":"280","sizes":"S, L, 2XL, 3XL","cat":"Blouses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/95abc8ee-d9fd-40f8-b982-4af7ee3e6aa5.png","stock":4,"description":"A relaxed shirt with bold scarlet-and-ivory vertical stripes."},{"name":"Sky Blue Belted Playsuit","price":"200","sizes":"M","cat":"Bottoms","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/f6bc686a-9f87-4f24-8286-43e42a8b9101.png","stock":1,"description":"A sky-blue button-front playsuit with short sleeves, a waist tie and tailored shorts."},{"name":"Blue Blossom Sheer Maxi Dress","price":"420","sizes":"2XL, 3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/3faee8f5-9aa2-448d-9060-72c221901971.png","stock":2,"description":"A full-length powder-blue halter maxi with delicate raised floral appliqué and a softly flowing sheer overlay."},{"name":"Ivory Petal Sheer Maxi Dress","price":"420","sizes":"3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/10cd3e6b-a1a1-4a6b-9d7d-5db961c5c42b.png","stock":1,"description":"An ivory sheer maxi dress with subtle floral texture."},{"name":"Rose Slip Maxi Dress","price":"250","sizes":"2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/737b68aa-12b3-4ae3-a075-8dd81474032d.png","stock":1,"description":"A soft rose maxi dress with a fluid, understated silhouette."},{"name":"Sage Slip Maxi Dress","price":"250","sizes":"2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/4b46c4f2-8efb-4563-93d6-96fd811842b9.png","stock":1,"description":"A muted sage maxi dress with a relaxed drape."},{"name":"Watercolor Bloom Maxi Dress","price":"420","sizes":"S, 2XL, 3XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/a1762e96-4ca8-499d-b321-0a945c429cb9.png","stock":3,"description":"A flowing full-length maxi dress in a vibrant pink, coral, lilac and sage watercolor floral print.","hidden":true},{"name":"Champagne Satin Midi Skirt","price":"290","sizes":"S, L, XL, 3XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/c9795b6f-f0c4-465c-82f9-70aff899a0a5.png","stock":4,"description":"A champagne satin-look midi skirt with a smooth, fluid finish."},{"name":"Blush Floral Maxi Skirt","price":"260","sizes":"S, M, 2XL, 3XL","cat":"Skirts","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1188c6e8-9ca1-49d1-8380-9059aaf56b9a.png","stock":6,"description":"A full-length skirt in a soft blush floral print, with a flowy, gathered silhouette."},{"name":"Noir Eyelet Puff Sleeve Tee","price":"280","sizes":"S, M, L","cat":"Tops","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/76f18953-5a7a-4098-bbad-dcb031becdbc.png","stock":3,"description":"A black tee with statement eyelet puff sleeves."},{"name":"Cream Smocked Button-Front Dress","price":"295","sizes":"S, M, L, XL, 2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/ecd682a3-a792-4ccf-9cb3-116e624651e3.png","stock":5,"description":"A cream mini dress with an off-shoulder ruffled neckline, a shirred bodice, four button-front details and a gathered skirt."},{"name":"Noir Smocked Button-Front Dress","price":"295","sizes":"L, XL, 2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9dc80dcb-b66a-4693-85ce-e1b8620b03bd.png","stock":3,"description":"A black dress with a shirred bodice, tortoiseshell-style buttons and a softly gathered skirt."},{"name":"Sunshine Gingham Smocked Dress","price":"320","sizes":"M, L, XL, 2XL","cat":"Dresses","img":"https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/5795be13-b06f-4d20-ba0d-8128867999bd.png","stock":4,"description":"A sunny yellow gingham dress with a shirred waist and softly gathered skirt."},{"name":"Ceramic House LED Light","price":"165","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138184682.jpg","stock":1,"description":"An illuminated ceramic-style village house for a warm festive display."},{"name":"Christmas Tree Cookie Jar","price":"545","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138147333.jpg","stock":1,"description":"A cheerful Christmas tree and snowman decorative set."},{"name":"Santa with LED Light","price":"110","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138113330.jpg","stock":1,"description":"A festive Santa ornament with a decorative snow-globe finish."},{"name":"Snowman with LED Light","price":"145","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138076918.jpg","stock":1,"description":"A detailed Christmas tree scene with Santa and seasonal accents."},{"name":"Santa with LED Light – Christmas Scene","price":"145","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138037600.jpg","stock":1,"description":"A festive Santa and Christmas tree decorative piece."},{"name":"Porcelain Light-Up Christmas Trees (18 cm R165 / 22 cm R195)","price":"165","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137983226.jpg","stock":1,"description":"A pair of decorative porcelain-style trees with a soft festive glow."},{"name":"Red Envelope Nutcracker","price":"499","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137929739.jpg","stock":1,"description":"A classic red nutcracker soldier decoration."},{"name":"Pink Nutcracker with Lollipop","price":"520","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137784314.jpg","stock":1,"description":"A pink nutcracker soldier decoration for a festive display."},{"name":"Pastel Blue Nutcracker with Tree","price":"520","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137737795.jpg","stock":1,"description":"A pastel blue nutcracker soldier decoration."},{"name":"Pastel Pink Nutcracker with Tree","price":"520","sizes":"One Size","cat":"Christmas","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137637288.jpg","stock":1,"description":"A pastel pink and blue nutcracker soldier decoration."},{"name":"Gold Filigree Half-Moon Stud Earrings","price":"55","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137326336.jpg","stock":1,"description":"Delicately textured scalloped hoops with a soft pearl-like finish."},{"name":"Multicolour Gemstone Stud Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137281183.jpg","stock":1,"description":"Bright multicolour gemstone-style studs."},{"name":"Black Oval Stud Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137240639.jpg","stock":1,"description":"Sleek black oval stud earrings."},{"name":"Pearl Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137201996.jpg","stock":1,"description":"Elegant round pearl-look drop earrings."},{"name":"Mosaic Square Gemstone Stud Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137167012.jpg","stock":1,"description":"Colourful mosaic square stud earrings."},{"name":"Black Cluster Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137124695.jpg","stock":1,"description":"Black floral cluster drop earrings with gold-tone details."},{"name":"Black Floral Cluster Drop Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137078536.jpg","stock":1,"description":"Black clustered drop earrings with gold-tone fittings."},{"name":"Ivory Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137004440.jpg","stock":1,"description":"Soft white textured statement studs."},{"name":"Fuchsia Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136931708.jpg","stock":1,"description":"Bright fuchsia textured statement studs."},{"name":"Green Textured Ball Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136891285.jpg","stock":1,"description":"Green textured statement studs."},{"name":"Yellow Textured Ball Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136797848.jpg","stock":1,"description":"Sunny yellow textured statement studs."},{"name":"Turquoise Textured Ball Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136755492.jpg","stock":1,"description":"Vibrant turquoise textured statement studs."},{"name":"White Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136714040.jpg","stock":1,"description":"Classic ivory textured statement studs."},{"name":"Navy Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136677994.jpg","stock":1,"description":"Deep navy textured statement studs."},{"name":"Pink Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136639369.jpg","stock":1,"description":"Bright pink textured statement studs."},{"name":"Red Textured Ball Stud Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136599428.jpg","stock":1,"description":"Vivid red textured statement studs."},{"name":"Pale Blue Floral Drop Earrings","price":"45","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136563897.jpg","stock":1,"description":"Pastel blue floral stud earrings."},{"name":"Festive Floral Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136521331.jpg","stock":1,"description":"Festive red, green and white motif stud earrings."},{"name":"Leopard Print Bow Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136484793.jpg","stock":1,"description":"Leopard-print bow stud earrings."},{"name":"Gold Bow Gemstone Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136449188.jpg","stock":1,"description":"Colourful gem-accent bow stud earrings."},{"name":"Pastel Abstract Stud Earrings","price":"55","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136409272.jpg","stock":1,"description":"Soft pastel abstract-pattern stud earrings."},{"name":"Delicate Gold Drop Earrings","price":"55","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136371947.jpg","stock":1,"description":"Minimal gold-tone drop earrings."},{"name":"Pastel Floral Stud Earrings","price":"50","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136333032.jpg","stock":1,"description":"Pastel multicolour floral-pattern stud earrings."},{"name":"White Floral Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136318638.jpg","stock":1,"description":"Delicate pearl-look tassel drop earrings."},{"name":"Mint Green Floral Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136297695.jpg","stock":1,"description":"Mint-green floral drop earrings."},{"name":"Pink Floral Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136191011.jpg","stock":1,"description":"Soft pink floral drop earrings."},{"name":"Blush Pink Beaded Drop Earrings","price":"60","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136156716.jpg","stock":1,"description":"Blush pink pearl-look drop earrings."},{"name":"Turquoise Flower Stud Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136109500.jpg","stock":1,"description":"Turquoise floral stud earrings."},{"name":"Lilac Flower Stud Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136033761.jpg","stock":1,"description":"Lilac floral stud earrings."},{"name":"Multicolour Gem Cluster Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794135998394.jpg","stock":1,"description":"Multicolour gemstone cluster stud earrings."},{"name":"Blue & Green Gem Cluster Earrings","price":"75","sizes":"One Size","cat":"Jewelry","img":"https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794135943065.jpg","stock":1,"description":"Blue and green gemstone cluster stud earrings."}];;;;;
+const products=[
+  {
+    "name": "Blush Cascade Ruffle Dress",
+    "price": "295",
+    "sizes": "S, L, 2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/57b01d83-339f-457b-ae71-ce45557d4f40.png",
+    "stock": 3,
+    "description": "A blush-pink mini dress with cascading layered ruffles and a flounced hem."
+  },
+  {
+    "name": "Tropical Bloom Maxi Dress",
+    "price": "320",
+    "sizes": "XL, 3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/db515c90-494b-4028-824b-48d09c6dbcfa.png",
+    "stock": 2,
+    "description": "A sky-blue maxi dress with bold tropical floral artwork."
+  },
+  {
+    "name": "Lavender Floral Maxi Dress",
+    "price": "300",
+    "sizes": "S, M, XL, 2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/eb3ee2b8-af9d-4139-a90e-e5db35567bc1.png",
+    "description": "A flowing full-length spaghetti-strap maxi dress in a vibrant pink, orange, lilac and sage watercolor floral print."
+  },
+  {
+    "name": "Ivory Eyelet Sleeve Top",
+    "price": "280",
+    "sizes": "S, M, L, XL, 2XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/e606d718-556f-4adf-bd21-31b9eb90ecc4.png",
+    "stock": 5,
+    "description": "A crisp ivory crew-neck top with short puff eyelet sleeves."
+  },
+  {
+    "name": "Sage & Ivory Stripe Shirt",
+    "price": "280",
+    "sizes": "S, L, XL, 2XL, 3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/582f8c83-94a9-45d6-adbb-c72d4f49f963.png",
+    "stock": 5,
+    "description": "A relaxed shirt in fresh sage-and-ivory vertical stripes."
+  },
+  {
+    "name": "Red Pleated Midi Skirt",
+    "price": "280",
+    "sizes": "S/M, L/XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/3a19c296-d191-4d97-a1b3-d2d2148f8141.png",
+    "stock": 3,
+    "description": "A fluid pleated midi skirt in a vivid scarlet finish."
+  },
+  {
+    "name": "Olive Polka-Dot Pleated Skirt",
+    "price": "280",
+    "sizes": "M",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/adde7e21-0cf8-4f70-9537-df4c8e9f3476.png",
+    "stock": 1,
+    "description": "An olive satin-look pleated skirt finished with delicate white polka dots."
+  },
+  {
+    "name": "Emerald Pleated Midi Skirt",
+    "price": "280",
+    "sizes": "S, L, XL, 2XL, 3XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/2dd5f035-ff1f-4dc8-8654-2328099a1bef.png",
+    "stock": 5,
+    "description": "A statement emerald pleated skirt with soft movement."
+  },
+  {
+    "name": "Hot-Pink Pleated Midi Skirt",
+    "price": "280",
+    "sizes": "M, L, XL, 2XL, 3XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/7239df0c-798b-4b8c-906c-df45f2134404.png",
+    "stock": 5,
+    "description": "A bright fuchsia pleated midi skirt."
+  },
+  {
+    "name": "Sage-Green Button-Front Shirt Dress",
+    "price": "400",
+    "sizes": "S, M, L, XL, 2XL, 3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8281ae2c-9373-459c-b271-5c319c3f5a52.png",
+    "description": "A sage-green button-front shirt dress with puff sleeves and a matching waist belt."
+  },
+  {
+    "name": "Cream Strappy Wide-Leg Jumpsuit",
+    "price": "250",
+    "sizes": "L, XL",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/d09da2fe-7fc5-43d6-9e90-441ee052d86c.png"
+  },
+  {
+    "name": "White Tailored Shorts",
+    "price": "120",
+    "sizes": "L, XL, 2XL",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/d2f245e6-ede1-47cd-93da-0713b88a4f4e.png",
+    "description": "Clean white tailored shorts with a structured waistband and a neat, polished silhouette.",
+    "stock": 8
+  },
+  {
+    "name": "Black-and-White Animal-Print Blouse",
+    "price": "250",
+    "sizes": "2XL, 3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/e694fbf6-c34b-4db2-83a1-c1cbb1fd5cbc.png",
+    "description": "A black-and-white printed blouse with a relaxed shape and a smart button-front finish."
+  },
+  {
+    "name": "Black Polka-Dot Tie-Neck Blouse",
+    "price": "360",
+    "sizes": "L, XL, 2XL, XXL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/2ed3a18e-f6d4-4fd7-9a14-7a5053e44588.png",
+    "description": "A black blouse with white polka dots, a soft tie neckline and long sleeves.",
+    "stock": 9,
+    "hidden": true
+  },
+  {
+    "name": "Black Tailored Shorts",
+    "price": "240",
+    "sizes": "M",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9e69e232-581d-4403-9cfc-facaeb59c138.png",
+    "stock": 1,
+    "description": "A classic black tailored short for easy everyday styling."
+  },
+  {
+    "name": "Dark Wrap Skirt",
+    "price": "245",
+    "sizes": "M, L, 2XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/eb2c86a4-c27a-495b-ac07-7b128d35defe.png",
+    "stock": 6,
+    "description": "A charcoal-black wrap skirt with a waist tie and soft A-line shape.",
+    "hidden": true
+  },
+  {
+    "name": "Ivory Wide-Leg Trousers",
+    "price": "240",
+    "sizes": "M, L, XL, 2XL",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/f8d2d6a7-f7dd-48b0-919d-61dbfb411a8b.png",
+    "stock": 7,
+    "description": "Fluid ivory wide-leg trousers with a high waist and an easy, elongated silhouette."
+  },
+  {
+    "name": "Sunshine Yellow Strappy Maxi Dress",
+    "price": "240",
+    "sizes": "M, XL, 2XL, 3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8e2e227f-bc19-44de-b989-11749b19523c.jpg",
+    "stock": 4,
+    "description": "A bright yellow full-length dress with a gathered flowing skirt and delicate shoulder straps.",
+    "hidden": true
+  },
+  {
+    "name": "Blush Maxi Skirt",
+    "price": "240",
+    "sizes": "M, 3XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/fbdb2790-e621-4a77-b738-ed82e379acdb.jpg",
+    "stock": 2,
+    "description": "A soft blush-pink maxi skirt with a smooth, flowing drape.",
+    "hidden": true
+  },
+  {
+    "name": "Skylar Bow Blouse",
+    "price": "345",
+    "sizes": "L, XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/7fee6074-d0b2-487c-a080-73ad37003704.png",
+    "stock": 1
+  },
+  {
+    "name": "Rosé Stripe Shirt",
+    "price": "240",
+    "sizes": "3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/47e6701d-b234-4de5-834d-52a9c2b4b336.png",
+    "stock": 1,
+    "description": "A relaxed button-front shirt in fine rose-and-ivory stripes."
+  },
+  {
+    "name": "Blush Signature Shirt",
+    "price": "240",
+    "sizes": "M, L, 2XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9822dc40-8db5-4863-a43d-ef181552b1c9.png",
+    "stock": 3,
+    "description": "A relaxed blush-pink button-front shirt."
+  },
+  {
+    "name": "Ivory Button Knit",
+    "price": "195",
+    "sizes": "XL, 2XL",
+    "cat": "Knitwear",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/0e1a021b-e0c1-4205-a740-e2f23e9e697b.png"
+  },
+  {
+    "name": "Champagne Bow Blouse",
+    "price": "345",
+    "sizes": "L",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/ab359d82-6459-40a4-ac98-be559b4f401a.png",
+    "stock": 1
+  },
+  {
+    "name": "Noir Gold Button-Front Top",
+    "price": "335",
+    "sizes": "XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9b874b1f-f767-48a7-992e-8fb64d12d951.png",
+    "description": "A black sleeveless top finished with a neat row of gold-tone buttons."
+  },
+  {
+    "name": "Parisian Bicycle Tee",
+    "price": "120",
+    "sizes": "S, 2XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/70b383de-fba7-4433-a0aa-26d2a26e2382.png"
+  },
+  {
+    "name": "Blush Eyelet Sleeve Top",
+    "price": "280",
+    "sizes": "XL, 2XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/5819e80c-8227-4144-a8e9-7b5a9b145796.png",
+    "stock": 2,
+    "description": "A soft blush tee finished with statement eyelet puff sleeves."
+  },
+  {
+    "name": "Tangerine Eyelet Puff-Sleeve Top",
+    "price": "280",
+    "sizes": "2XL, 3XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/979d85eb-6391-4909-aaa6-4e367067b95b.png",
+    "stock": 2,
+    "description": "A vivid orange top with a rounded neckline and statement eyelet puff sleeves."
+  },
+  {
+    "name": "Ivory Polka-Dot Tie-Neck Blouse",
+    "price": "345",
+    "sizes": "XXL, 3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/8f56f507-8d7f-46de-a774-71d6d098afcd.jpg",
+    "stock": 2,
+    "description": "A sheer ivory blouse with black polka dots, long sleeves and a front tie neckline.",
+    "hidden": true
+  },
+  {
+    "name": "Cream Button-Front Playsuit",
+    "price": "250",
+    "sizes": "M, XL, 2XL",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/a9e18270-69ca-4faa-9de2-f10b04d8ed7c.png",
+    "stock": 3,
+    "description": "A cream strapless playsuit with a shirred bodice, a ruffled neckline, prominent front buttons and softly gathered shorts.",
+    "hidden": true
+  },
+  {
+    "name": "Fuchsia Shirred Ruffle Top",
+    "price": "150",
+    "sizes": "One Size",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1cf6095a-b1ea-42d1-8d1f-a9527fabae4c.png",
+    "stock": 6,
+    "description": "A bright fuchsia shirred top with a softly ruffled finish."
+  },
+  {
+    "name": "Fuchsia Smocked Statement Top",
+    "price": "245",
+    "sizes": "S, XL",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/6df04634-a7e1-49e6-9e21-cbf7e144aafc.png",
+    "stock": 2,
+    "description": "A vibrant fuchsia smocked top with a textured, figure-hugging finish."
+  },
+  {
+    "name": "Sand Lace-Trim Ribbed Top",
+    "price": "165",
+    "sizes": "One Size",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/cd8c283f-243f-4b7d-9add-8111cacac1a8.png",
+    "stock": 5,
+    "description": "A sand-toned ribbed top framed with delicate lace trim."
+  },
+  {
+    "name": "Ivory Lace-Trim Ribbed Top",
+    "price": "165",
+    "sizes": "One Size",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/92e3d63c-4e75-4370-9d35-9ee6d4aed907.png",
+    "stock": 4,
+    "description": "An ivory ribbed top with lace edging and a feminine V neckline."
+  },
+  {
+    "name": "Noir Lace-Trim Sleeveless Top",
+    "price": "165",
+    "sizes": "One Size",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/24ed86bc-4a4e-4522-9150-865a483a9cf6.png",
+    "stock": 6,
+    "description": "A black sleeveless top with delicate lace trim."
+  },
+  {
+    "name": "Cocoa & Ivory Stripe Shirt",
+    "price": "280",
+    "sizes": "M, 3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1a293d90-0ee3-4a16-93cd-476ee4791e9f.png",
+    "stock": 2,
+    "description": "A relaxed button-front shirt in cocoa-and-ivory vertical stripes."
+  },
+  {
+    "name": "Scarlet & Ivory Stripe Shirt",
+    "price": "280",
+    "sizes": "S, L, 2XL, 3XL",
+    "cat": "Blouses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/95abc8ee-d9fd-40f8-b982-4af7ee3e6aa5.png",
+    "stock": 4,
+    "description": "A relaxed shirt with bold scarlet-and-ivory vertical stripes."
+  },
+  {
+    "name": "Sky Blue Belted Playsuit",
+    "price": "200",
+    "sizes": "M",
+    "cat": "Bottoms",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/f6bc686a-9f87-4f24-8286-43e42a8b9101.png",
+    "stock": 1,
+    "description": "A sky-blue button-front playsuit with short sleeves, a waist tie and tailored shorts."
+  },
+  {
+    "name": "Blue Blossom Sheer Maxi Dress",
+    "price": "420",
+    "sizes": "2XL, 3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/3faee8f5-9aa2-448d-9060-72c221901971.png",
+    "stock": 2,
+    "description": "A full-length powder-blue halter maxi with delicate raised floral appliqué and a softly flowing sheer overlay."
+  },
+  {
+    "name": "Ivory Petal Sheer Maxi Dress",
+    "price": "420",
+    "sizes": "3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/10cd3e6b-a1a1-4a6b-9d7d-5db961c5c42b.png",
+    "stock": 1,
+    "description": "An ivory sheer maxi dress with subtle floral texture."
+  },
+  {
+    "name": "Rose Slip Maxi Dress",
+    "price": "250",
+    "sizes": "2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/737b68aa-12b3-4ae3-a075-8dd81474032d.png",
+    "stock": 1,
+    "description": "A soft rose maxi dress with a fluid, understated silhouette."
+  },
+  {
+    "name": "Sage Slip Maxi Dress",
+    "price": "250",
+    "sizes": "2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/4b46c4f2-8efb-4563-93d6-96fd811842b9.png",
+    "stock": 1,
+    "description": "A muted sage maxi dress with a relaxed drape."
+  },
+  {
+    "name": "Watercolor Bloom Maxi Dress",
+    "price": "420",
+    "sizes": "S, 2XL, 3XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/a1762e96-4ca8-499d-b321-0a945c429cb9.png",
+    "stock": 3,
+    "description": "A flowing full-length maxi dress in a vibrant pink, coral, lilac and sage watercolor floral print.",
+    "hidden": true
+  },
+  {
+    "name": "Champagne Satin Midi Skirt",
+    "price": "290",
+    "sizes": "S, L, XL, 3XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/c9795b6f-f0c4-465c-82f9-70aff899a0a5.png",
+    "stock": 4,
+    "description": "A champagne satin-look midi skirt with a smooth, fluid finish."
+  },
+  {
+    "name": "Blush Floral Maxi Skirt",
+    "price": "260",
+    "sizes": "S, M, 2XL, 3XL",
+    "cat": "Skirts",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/1188c6e8-9ca1-49d1-8380-9059aaf56b9a.png",
+    "stock": 6,
+    "description": "A full-length skirt in a soft blush floral print, with a flowy, gathered silhouette."
+  },
+  {
+    "name": "Noir Eyelet Puff Sleeve Tee",
+    "price": "280",
+    "sizes": "S, M, L",
+    "cat": "Tops",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/76f18953-5a7a-4098-bbad-dcb031becdbc.png",
+    "stock": 3,
+    "description": "A black tee with statement eyelet puff sleeves."
+  },
+  {
+    "name": "Cream Smocked Button-Front Dress",
+    "price": "295",
+    "sizes": "S, M, L, XL, 2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/ecd682a3-a792-4ccf-9cb3-116e624651e3.png",
+    "stock": 5,
+    "description": "A cream mini dress with an off-shoulder ruffled neckline, a shirred bodice, four button-front details and a gathered skirt."
+  },
+  {
+    "name": "Noir Smocked Button-Front Dress",
+    "price": "295",
+    "sizes": "L, XL, 2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/9dc80dcb-b66a-4693-85ce-e1b8620b03bd.png",
+    "stock": 3,
+    "description": "A black dress with a shirred bodice, tortoiseshell-style buttons and a softly gathered skirt."
+  },
+  {
+    "name": "Sunshine Gingham Smocked Dress",
+    "price": "320",
+    "sizes": "M, L, XL, 2XL",
+    "cat": "Dresses",
+    "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JlBxAyut4hiS7XHQife3mH61Ba/5795be13-b06f-4d20-ba0d-8128867999bd.png",
+    "stock": 4,
+    "description": "A sunny yellow gingham dress with a shirred waist and softly gathered skirt."
+  },
+  {
+    "name": "Ceramic House LED Light",
+    "price": "165",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138184682.jpg",
+    "stock": 1,
+    "description": "An illuminated ceramic-style village house for a warm festive display."
+  },
+  {
+    "name": "Christmas Tree Cookie Jar",
+    "price": "545",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138147333.jpg",
+    "stock": 1,
+    "description": "A cheerful Christmas tree and snowman decorative set."
+  },
+  {
+    "name": "Santa with LED Light",
+    "price": "110",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138113330.jpg",
+    "stock": 1,
+    "description": "A festive Santa ornament with a decorative snow-globe finish."
+  },
+  {
+    "name": "Snowman with LED Light",
+    "price": "145",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138076918.jpg",
+    "stock": 1,
+    "description": "A detailed Christmas tree scene with Santa and seasonal accents."
+  },
+  {
+    "name": "Santa with LED Light – Christmas Scene",
+    "price": "145",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794138037600.jpg",
+    "stock": 1,
+    "description": "A festive Santa and Christmas tree decorative piece."
+  },
+  {
+    "name": "Porcelain Light-Up Christmas Trees (18 cm R165 / 22 cm R195)",
+    "price": "165",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137983226.jpg",
+    "stock": 1,
+    "description": "A pair of decorative porcelain-style trees with a soft festive glow."
+  },
+  {
+    "name": "Red Envelope Nutcracker",
+    "price": "499",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137929739.jpg",
+    "stock": 1,
+    "description": "A classic red nutcracker soldier decoration."
+  },
+  {
+    "name": "Pink Nutcracker with Lollipop",
+    "price": "520",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137784314.jpg",
+    "stock": 1,
+    "description": "A pink nutcracker soldier decoration for a festive display."
+  },
+  {
+    "name": "Pastel Blue Nutcracker with Tree",
+    "price": "520",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137737795.jpg",
+    "stock": 1,
+    "description": "A pastel blue nutcracker soldier decoration."
+  },
+  {
+    "name": "Pastel Pink Nutcracker with Tree",
+    "price": "520",
+    "sizes": "One Size",
+    "cat": "Christmas",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137637288.jpg",
+    "stock": 1,
+    "description": "A pastel pink and blue nutcracker soldier decoration."
+  },
+  {
+    "name": "Gold Filigree Half-Moon Stud Earrings",
+    "price": "55",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137326336.jpg",
+    "stock": 1,
+    "description": "Delicately textured scalloped hoops with a soft pearl-like finish."
+  },
+  {
+    "name": "Multicolour Gemstone Stud Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137281183.jpg",
+    "stock": 1,
+    "description": "Bright multicolour gemstone-style studs."
+  },
+  {
+    "name": "Black Oval Stud Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137240639.jpg",
+    "stock": 1,
+    "description": "Sleek black oval stud earrings."
+  },
+  {
+    "name": "Pearl Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137201996.jpg",
+    "stock": 1,
+    "description": "Elegant round pearl-look drop earrings."
+  },
+  {
+    "name": "Mosaic Square Gemstone Stud Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137167012.jpg",
+    "stock": 1,
+    "description": "Colourful mosaic square stud earrings."
+  },
+  {
+    "name": "Black Cluster Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137124695.jpg",
+    "stock": 1,
+    "description": "Black floral cluster drop earrings with gold-tone details."
+  },
+  {
+    "name": "Black Floral Cluster Drop Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137078536.jpg",
+    "stock": 1,
+    "description": "Black clustered drop earrings with gold-tone fittings."
+  },
+  {
+    "name": "Ivory Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794137004440.jpg",
+    "stock": 1,
+    "description": "Soft white textured statement studs."
+  },
+  {
+    "name": "Fuchsia Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136931708.jpg",
+    "stock": 1,
+    "description": "Bright fuchsia textured statement studs."
+  },
+  {
+    "name": "Green Textured Ball Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136891285.jpg",
+    "stock": 1,
+    "description": "Green textured statement studs."
+  },
+  {
+    "name": "Yellow Textured Ball Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136797848.jpg",
+    "stock": 1,
+    "description": "Sunny yellow textured statement studs."
+  },
+  {
+    "name": "Turquoise Textured Ball Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136755492.jpg",
+    "stock": 1,
+    "description": "Vibrant turquoise textured statement studs."
+  },
+  {
+    "name": "White Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136714040.jpg",
+    "stock": 1,
+    "description": "Classic ivory textured statement studs."
+  },
+  {
+    "name": "Navy Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136677994.jpg",
+    "stock": 1,
+    "description": "Deep navy textured statement studs."
+  },
+  {
+    "name": "Pink Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136639369.jpg",
+    "stock": 1,
+    "description": "Bright pink textured statement studs."
+  },
+  {
+    "name": "Red Textured Ball Stud Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136599428.jpg",
+    "stock": 1,
+    "description": "Vivid red textured statement studs."
+  },
+  {
+    "name": "Pale Blue Floral Drop Earrings",
+    "price": "45",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136563897.jpg",
+    "stock": 1,
+    "description": "Pastel blue floral stud earrings."
+  },
+  {
+    "name": "Festive Floral Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136521331.jpg",
+    "stock": 1,
+    "description": "Festive red, green and white motif stud earrings."
+  },
+  {
+    "name": "Leopard Print Bow Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136484793.jpg",
+    "stock": 1,
+    "description": "Leopard-print bow stud earrings."
+  },
+  {
+    "name": "Gold Bow Gemstone Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136449188.jpg",
+    "stock": 1,
+    "description": "Colourful gem-accent bow stud earrings."
+  },
+  {
+    "name": "Pastel Abstract Stud Earrings",
+    "price": "55",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136409272.jpg",
+    "stock": 1,
+    "description": "Soft pastel abstract-pattern stud earrings."
+  },
+  {
+    "name": "Delicate Gold Drop Earrings",
+    "price": "55",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136371947.jpg",
+    "stock": 1,
+    "description": "Minimal gold-tone drop earrings."
+  },
+  {
+    "name": "Pastel Floral Stud Earrings",
+    "price": "50",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136333032.jpg",
+    "stock": 1,
+    "description": "Pastel multicolour floral-pattern stud earrings."
+  },
+  {
+    "name": "White Floral Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136318638.jpg",
+    "stock": 1,
+    "description": "Delicate pearl-look tassel drop earrings."
+  },
+  {
+    "name": "Mint Green Floral Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136297695.jpg",
+    "stock": 1,
+    "description": "Mint-green floral drop earrings."
+  },
+  {
+    "name": "Pink Floral Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136191011.jpg",
+    "stock": 1,
+    "description": "Soft pink floral drop earrings."
+  },
+  {
+    "name": "Blush Pink Beaded Drop Earrings",
+    "price": "60",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136156716.jpg",
+    "stock": 1,
+    "description": "Blush pink pearl-look drop earrings."
+  },
+  {
+    "name": "Turquoise Flower Stud Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136109500.jpg",
+    "stock": 1,
+    "description": "Turquoise floral stud earrings."
+  },
+  {
+    "name": "Lilac Flower Stud Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794136033761.jpg",
+    "stock": 1,
+    "description": "Lilac floral stud earrings."
+  },
+  {
+    "name": "Multicolour Gem Cluster Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794135998394.jpg",
+    "stock": 1,
+    "description": "Multicolour gemstone cluster stud earrings."
+  },
+  {
+    "name": "Blue & Green Gem Cluster Earrings",
+    "price": "75",
+    "sizes": "One Size",
+    "cat": "Jewelry",
+    "img": "https://nx97bpuyqdmk0zfe.public.blob.vercel-storage.com/yara-products/1794135943065.jpg",
+    "stock": 1,
+    "description": "Blue and green gemstone cluster stud earrings."
+  }
+];;;;;
 let cart=[];let selectedSizes={};let active='All';let catalogShown=1000;
 const money=v=>v==='TBC'?'Price TBC':'R'+v;
 function card(p,i){const sizeOptions=String(p.sizes||'One Size').split(',').map(s=>s.trim()).filter(Boolean);return '<article class="product"><div class="pimg" role="button" tabindex="0" aria-label="View '+p.name+' details" onclick="openQuickView('+i+')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openQuickView('+i+')}"><button class="heart" onclick="event.stopPropagation();addWish(\''+p.name+'\')">♡</button><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div><div class="pmeta"><button class="pname" style="border:0;background:none;padding:0;text-align:left;cursor:pointer" onclick="openQuickView('+i+')">'+p.name+'</button><div class="price">'+money(p.price)+'</div><label class="size-picker-label" for="size-'+i+'">Select size</label><select class="size-picker" id="size-'+i+'" onchange="selectedSizes['+i+']=this.value"><option value="">Choose a size</option>'+sizeOptions.map(size=>'<option value="'+size+'" '+(selectedSizes[i]===size?'selected':'')+'>'+size+'</option>').join('')+'</select><button class="textlink" style="border:0;background:none;padding:0;margin-top:11px" onclick="addCart('+i+')">Add to bag</button></div></article>'}
